@@ -25,6 +25,9 @@ public class Book implements Serializable {
     )
     private Set<Author> authors = new HashSet<>();
 
+    @ManyToOne
+    private Publisher publisher;
+
     public Book(){}
 
     public Long getId() {
@@ -53,6 +56,14 @@ public class Book implements Serializable {
 
     public void setAuthors(Set<Author> authors) {
         this.authors = authors;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 
     @Override
